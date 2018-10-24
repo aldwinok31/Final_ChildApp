@@ -188,25 +188,19 @@ class TrackerService : Service() {
 
                             if (devicet.Screenshot) {
                                 db.collection("Devices").document(doc.id).update("Screenshot", false)
-
                                 ScreenShot().doshot(doc.id, applicationContext)
-
                             }
 
                             if (devicet.TriggerAlarm) {
-
                                 TriggerAlarm().playAlarm(applicationContext)
                                 db.collection("Devices").document(doc.id).update("TriggerAlarm", false)
                             }
                             if (!devicet.Messages.equals("")) {
-
-
                                 var intent = Intent(applicationContext, MessageReciever::class.java)
                                 intent.putExtra("id", doc.id)
                                 intent.putExtra("msg", devicet.Messages)
                                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                                 startActivity(intent)
-
                             }
 
                             if (devicet.Location) {

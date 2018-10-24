@@ -43,7 +43,7 @@ class GetCurrentLocations {
 
 
 
-           /* dataref.addValueEventListener(object:ValueEventListener{
+            dataref.addValueEventListener(object:ValueEventListener{
                 override fun onCancelled(p0: DatabaseError?) {
                       Log.d("Error","Cancelled")
                  }
@@ -53,13 +53,8 @@ class GetCurrentLocations {
                         dataref.setValue(device)
 
                     }
-if(p0!!.hasChild("Locations")){
-
-    bool = true
-}
-
-                }
-                })*/
+            }
+                })
 
 
 
